@@ -93,7 +93,7 @@ const server = serve({
 
       if (req.method === "POST" && url.pathname === "/api/movies") {
         const body = await req.json();
-        const { title, description, genre } = body;
+        const { title, description, genre, date } = body;
 
         if (!title || !genre) {
           return new Response("Title and genre are required", { status: 400 });
@@ -102,7 +102,7 @@ const server = serve({
         try {
           const result = await db
             .insert(movies)
-            .values({ title, description, genre })
+            .values({ title, description, genre, date })
             .returning({ insertedId: movies.id });
 
           if (result.length > 0) {
