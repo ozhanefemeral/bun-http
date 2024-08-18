@@ -41,4 +41,8 @@ await db.insert(schema.movies).values([
   },
 ]);
 
+await db
+  .insert(schema.users)
+  .values([{ name: "Alice" }, { name: "Bob" }, { name: "Charlie" }]);
+
 console.log(`Seeding complete.`);
