@@ -67,7 +67,7 @@ const seedDatabase = async () => {
   console.time("Seeding database");
 
   const userCount = 1_000_000;
-  const movieCount = 100_000;
+  const movieCount = 1_000_000;
 
   // Create tables
   db.run(`CREATE TABLE IF NOT EXISTS users (
