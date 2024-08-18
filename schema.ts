@@ -15,8 +15,9 @@ export const movies = sqliteTable("movies", {
   title: text("title").notNull(),
   description: text("description"),
   genre: text("genre", {
-    enum: ["action", "comedy", "drama", "sci-fi", "adventure"],
+    enum: ["action", "comedy", "drama", "sci-fi", "adventure", "horror"],
   }).notNull(),
+  date: integer("date").notNull(),
 });
 
 export const userFavorites = sqliteTable(
